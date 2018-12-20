@@ -4,7 +4,7 @@
 ![header](SCREENSHOOT1.png)
 
 ### Description ###
-**This Homebrew could help you delete the game trophies you won't like to synch.**
+This Homebrew could help you delete the game trophies you won't like to synch.
 
 ## IMPORTANT ##
 **Everytime a trophy Is deleted, the trophy app/bubble  must be launched to update the trophy db, we highly recomend you to disable the wifi in the PS Vita before launching the trophy app/bubble for this matter.**
@@ -13,7 +13,7 @@
 -Initial Version.<br>
 
 ### Controls ###
-**Trophy Manager does recognize the accept/cancel buttons according to console region.**
+Trophy Manager does recognize the accept/cancel buttons according to console region.
 
 *Main Screen*
 
