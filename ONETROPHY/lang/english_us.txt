@@ -1,0 +1,26 @@
+-----------------------------------------------Texts
+
+STRINGS_MARK_TROPIES =			"Mark/Unmark Trophies"
+STRINGS_DEL_TROPIES =			"Delete Trophies"
+STRINGS_SHOW_DETAILS =			"Show Details"
+STRINGS_EMPTY =					"Not Trophies !!!"
+STRINGS_GAME_NOT_INSTALLED =	"Game not installed !!!"
+STRINGS_SUB_TROPHIES =			"Sub-Trophies:"
+
+STRINGS_TROPHY_TYPE =			"Trophy:"
+STRINGS_TROPHY_STATUS =			"Status:"
+STRINGS_TROPHY_HIDDEN =			"Hidden:"
+STRINGS_TROPHY_UNLOCKED =		"Unlocked"
+STRINGS_TROPHY_LOCKED =			"Locked"
+
+STRINGS_TROPHY_PLATINUM =		"Platinum"
+STRINGS_TROPHY_GOLD =			"Gold"
+STRINGS_TROPHY_SILVER =			"Silver"
+STRINGS_TROPHY_BRONZE =			"Bronze"
+
+STRINGS_DELETE_QUESTION =		"Do you want to eliminate this Trophies ?"
+STRINGS_HIDDEN_YES =			"Yes"
+STRINGS_HIDDEN_NO =				"No"
+
+--color yellow
+STRINGS_TROPHY_WARNING_HIDDEN =	"HIDDEN"
