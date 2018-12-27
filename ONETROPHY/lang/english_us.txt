@@ -1,9 +1,11 @@
 -----------------------------------------------Texts
 
-STRINGS_MARK_TROPIES =			"Mark/Unmark Trophies"
-STRINGS_DEL_TROPIES =			"Delete Trophies"
+STRINGS_MARK_TROPHIES =			"Mark/Unmark Trophies"
+STRINGS_DEL_TROPHIES =			"Delete Trophies"
 STRINGS_SHOW_DETAILS =			"Show Details"
 STRINGS_EMPTY =					"Not Trophies !!!"
+
+STRINGS_RELOAD_TROPHIES =		"It is necessary to first synchronize the Trophies\n\nfrom the APP Trophies."
 STRINGS_GAME_NOT_INSTALLED =	"Game not installed !!!"
 STRINGS_SUB_TROPHIES =			"Sub-Trophies:"
 
@@ -24,3 +26,7 @@ STRINGS_HIDDEN_NO =				"No"
 
 --color yellow
 STRINGS_TROPHY_WARNING_HIDDEN =	"HIDDEN"
+
+--Wifi is on
+STRINGS_TROPHY_OPENAPP =		"Trophies App"
+STRINGS_TROPHY_WIFI_ON =		"Remember To disable WI-FI to prevent synching trophies"

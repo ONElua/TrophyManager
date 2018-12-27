@@ -11,6 +11,8 @@
 --Load palette
 color.loadpalette()
 
+flag_delete_db = false
+
 --Load prx for mount
 if files.exists("modules/kernel.skprx") then
 	if os.requirek("modules/kernel.skprx")==1 then __kernel = true end
@@ -74,3 +76,5 @@ ICONS_TROPHY = "ux0:user/00/trophy/conf/"
 CONF_TROPHY  = "ur0:user/00/trophy/conf/"
 DATA_TROPHY  = "ur0:user/00/trophy/data/"
 TROP_TROPHY  = "ur0:user/00/trophy/data/sce_trop"
+DB_TROPHY = "ur0:user/00/trophy/db"
+

@@ -22,55 +22,59 @@
 "unlockB"								Total of unlocked trophies: Bronze
 ]]
 
-local trophyT = nil
+local trophyT = {}
 
 function get_trophies()
 
 	trophyT = trophy.info(__TITLE)
 	if trophyT then
-		for i=1, #trophyT do
+		for i=#trophyT,1,-1 do
 
-			trophyT[i].total = tonumber(trophyT[i].total)
-			trophyT[i].group = tonumber(trophyT[i].group)
-			trophyT[i].progress = tonumber(trophyT[i].progress)
-			trophyT[i].unlockT = tonumber(trophyT[i].unlockT)
+			if trophyT[i].title == nil then	table.remove(trophyT,i)
+			else
+				trophyT[i].total = tonumber(trophyT[i].total)
+				trophyT[i].group = tonumber(trophyT[i].group)
+				trophyT[i].progress = tonumber(trophyT[i].progress)
+				trophyT[i].unlockT = tonumber(trophyT[i].unlockT)
 
-			trophyT[i].exist = false
-			trophyT[i].del = false
+				trophyT[i].exist = false
+				trophyT[i].del = false
 
-			game.umount()
-				buttons.homepopup(0)
-					game.mount(DATA_TROPHY..trophyT[i].npcommid.."/")
+				game.umount()
+					buttons.homepopup(0)
+						game.mount(DATA_TROPHY..trophyT[i].npcommid.."/")
 
-					local app = nil
+						local app = nil
 
-					--Open TRPTITLE.DAT
-					local fp = io.open(DATA_TROPHY..trophyT[i].npcommid.."/TRPTITLE.DAT","r")
-					if fp then
-						fp:seek("set",0x290)
-						app = fp:read(0x9)
-						if app == "TROPHAXSE" then
-							fp:seek("set",0x2D0)
+						--Open TRPTITLE.DAT
+						local fp = io.open(DATA_TROPHY..trophyT[i].npcommid.."/TRPTITLE.DAT","r")
+						if fp then
+							fp:seek("set",0x290)
 							app = fp:read(0x9)
+							if app == "TROPHAXSE" then
+								fp:seek("set",0x2D0)
+								app = fp:read(0x9)
+							end
+							fp:close()
 						end
-						fp:close()
-					end
 
-					--[[
-					--Open TRPTRANS.DAT
-					trophyT[i].commsign = nil
-					local fp = io.open(DATA_TROPHY..trophyT[i].npcommid.."/TRPTRANS.DAT","r")
-					if fp then
-						fp:seek("set",0x190)
-						trophyT[i].commsign = fp:read(0xA0)
-						fp:close()
-					end
-					]]
+						--[[
+						--Open TRPTRANS.DAT
+						trophyT[i].commsign = nil
+						local fp = io.open(DATA_TROPHY..trophyT[i].npcommid.."/TRPTRANS.DAT","r")
+						if fp then
+							fp:seek("set",0x190)
+							trophyT[i].commsign = fp:read(0xA0)
+							fp:close()
+						end
+						]]
 
-					if app and game.exists(app) then trophyT[i].exist = true end
+						if app and game.exists(app) then trophyT[i].exist = true end
 
-				buttons.homepopup(1)
-			game.umount()
+					buttons.homepopup(1)
+				game.umount()
+
+			end
 
 		end
 	end
@@ -97,6 +101,9 @@ function trophies_title()
 	buttons.interval(12,5)
 	while true do
 		buttons.read()
+		
+		if flag_delete_db then buttons.homepopup(0) else buttons.homepopup(1) end
+		
 		if back then back:blit(0,0) end
 		if img_trophies then
 			img_trophies:blitsprite(560,0,0)
@@ -188,18 +195,25 @@ function trophies_title()
 					trophyT[i].icon0:blit(955 - (trophyT[i].icon0:getw()/2), y + (inter/2))
 				end
 
-				if buttonskey then buttonskey:blitsprite(10,447,2) end                     		--[]
-				screen.print(40,450,STRINGS_MARK_TROPIES,1,color.white,color.black,__ALEFT)
+				if buttonskey then buttonskey:blitsprite(10,437,2) end                     		--[]
+				screen.print(40,440,STRINGS_MARK_TROPHIES,1,color.white,color.black,__ALEFT)
 
-				if buttonskey then buttonskey2:blitsprite(5,472,1) end                   		--Start
-				screen.print(40,475,STRINGS_DEL_TROPIES,1,color.white,color.black, __ALEFT)
+				if buttonskey then buttonskey2:blitsprite(5,460,1) end                   		--Start
+				screen.print(40,462,STRINGS_DEL_TROPHIES,1,color.white,color.black, __ALEFT)
+
+				if buttonskey then buttonskey:blitsprite(10,483,1) end                     		--Triangle
+				screen.print(40,485,STRINGS_MARK_TROPHIES,1,color.white,color.black,__ALEFT)
 
 				y+=inter + 15
 
 			end --for
 
 		else
-			screen.print(480,272,STRINGS_EMPTY,1.5,color.yellow,color.black,__ACENTER)
+			screen.print(480,222,STRINGS_EMPTY,1.5,color.yellow,color.black,__ACENTER)
+
+			screen.print(480,252,STRINGS_RELOAD_TROPHIES,1,color.white,color.black,__ACENTER)
+			screen.print(480,282,STRINGS_TROPHY_WIFI_ON,1,color.yellow,color.black,__ACENTER)
+
 		end
 
 		screen.flip()
@@ -230,7 +244,6 @@ function trophies_title()
 						--ur0
 						files.delete(CONF_TROPHY..trophyT[scroll.sel].npcommid)
 						files.delete(DATA_TROPHY..trophyT[scroll.sel].npcommid)
-						files.delete(TROP_TROPHY)
 						trophyT[scroll.sel].icon0, delete = nil,0
 						scroll:delete(trophyT)
 						
@@ -243,7 +256,6 @@ function trophies_title()
 								--ur0
 								files.delete(CONF_TROPHY..trophyT[i].npcommid)
 								files.delete(DATA_TROPHY..trophyT[i].npcommid)
-								files.delete(TROP_TROPHY)
 								trophyT[i].icon0 = nil
 								table.remove(trophyT,i)
 							end
@@ -252,6 +264,8 @@ function trophies_title()
 						delete = 0
 
 					end
+					files.delete(TROP_TROPHY)
+					flag_delete_db = true
 				end
 			end
 
@@ -273,6 +287,23 @@ function trophies_title()
 				end
 			end
 
+		end
+
+		--Open Trophy APP
+		if buttons.triangle then
+			if wlan.isconnected() then os.message(STRINGS_TROPHY_WIFI_ON)
+			else
+				if flag_delete_db then files.delete(DB_TROPHY) end
+				os.delay(250)
+				os.uri("pstc:")
+				if flag_delete_db then buttons.homepopup(0) else buttons.homepopup(1) end
+			end
+		end
+
+		if buttons[cancel] then
+			if flag_delete_db then files.delete(DB_TROPHY) end
+			buttons.homepopup(1)
+			os.exit()
 		end
 
 	end
