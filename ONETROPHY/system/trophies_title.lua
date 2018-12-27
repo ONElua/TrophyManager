@@ -201,20 +201,23 @@ function trophies_title()
 				if buttonskey then buttonskey2:blitsprite(5,460,1) end                   		--Start
 				screen.print(40,462,STRINGS_DEL_TROPHIES,1,color.white,color.black, __ALEFT)
 
-				if buttonskey then buttonskey:blitsprite(10,483,1) end                     		--Triangle
-				screen.print(40,485,STRINGS_MARK_TROPHIES,1,color.white,color.black,__ALEFT)
-
 				y+=inter + 15
 
 			end --for
 
 		else
-			screen.print(480,222,STRINGS_EMPTY,1.5,color.yellow,color.black,__ACENTER)
+			screen.print(480,202,STRINGS_EMPTY,1.5,color.yellow,color.black,__ACENTER)
 
 			screen.print(480,252,STRINGS_RELOAD_TROPHIES,1,color.white,color.black,__ACENTER)
-			screen.print(480,282,STRINGS_TROPHY_WIFI_ON,1,color.yellow,color.black,__ACENTER)
+			
+			if wlan.isconnected() then
+				screen.print(480,352,STRINGS_TROPHY_WIFI_ON,1.5,color.yellow,color.black,__ACENTER)
+			end
 
 		end
+
+		if buttonskey then buttonskey:blitsprite(10,483,1) end                     		--Triangle
+		screen.print(40,485,STRINGS_TROPHY_OPENAPP,1,color.white,color.black,__ALEFT)
 
 		screen.flip()
 
@@ -294,9 +297,10 @@ function trophies_title()
 			if wlan.isconnected() then os.message(STRINGS_TROPHY_WIFI_ON)
 			else
 				if flag_delete_db then files.delete(DB_TROPHY) end
-				os.delay(250)
-				os.uri("pstc:")
+				os.delay(500)
 				if flag_delete_db then buttons.homepopup(0) else buttons.homepopup(1) end
+
+				os.uri("pstc:")
 			end
 		end
 
