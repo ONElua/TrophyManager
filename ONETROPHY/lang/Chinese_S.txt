@@ -1,0 +1,32 @@
+-----------------------------------------------Texts
+
+STRINGS_MARK_TROPHIES =			"标记/取消标记 奖杯"
+STRINGS_DEL_TROPHIES =			"删除奖杯"
+STRINGS_SHOW_DETAILS =			"显示详情"
+STRINGS_EMPTY =					"没有奖杯！！！"
+
+STRINGS_RELOAD_TROPHIES =		"需要先与奖杯气泡同步\n\n（非联网上传）"
+STRINGS_GAME_NOT_INSTALLED =	"游戏还没安装！！！"
+STRINGS_SUB_TROPHIES =			"Sub－奖杯："
+
+STRINGS_TROPHY_TYPE =			"奖杯："
+STRINGS_TROPHY_STATUS =			"数据："
+STRINGS_TROPHY_HIDDEN =			"隐藏："
+STRINGS_TROPHY_UNLOCKED =		"已解锁"
+STRINGS_TROPHY_LOCKED =			"锁定"
+
+STRINGS_TROPHY_PLATINUM =		"铂金"
+STRINGS_TROPHY_GOLD =			"黄金"
+STRINGS_TROPHY_SILVER =			"白银"
+STRINGS_TROPHY_BRONZE =			"青铜"
+
+STRINGS_DELETE_QUESTION =		"你确定要消除这些奖杯吗？"
+STRINGS_HIDDEN_YES =			"是"
+STRINGS_HIDDEN_NO =				"否"
+
+--color yellow
+STRINGS_TROPHY_WARNING_HIDDEN =	"隐藏"
+
+--Wifi is on
+STRINGS_TROPHY_OPENAPP =		"奖杯应用"
+STRINGS_TROPHY_WIFI_ON =		"记得关闭WI-FI,以防止上传奖杯"

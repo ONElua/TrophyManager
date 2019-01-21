@@ -1,0 +1,32 @@
+-----------------------------------------------Texts
+
+STRINGS_MARK_TROPHIES =			"標記/取消標記 獎杯"
+STRINGS_DEL_TROPHIES =			"刪除獎杯"
+STRINGS_SHOW_DETAILS =			"顯示詳情"
+STRINGS_EMPTY =					"沒有獎杯！！！"
+
+STRINGS_RELOAD_TROPHIES =		"需要先與獎杯氣泡同歩\n\n（非聯網上傳）"
+STRINGS_GAME_NOT_INSTALLED =	"遊戲还沒安裝！！！"
+STRINGS_SUB_TROPHIES =			"Sub－獎杯："
+
+STRINGS_TROPHY_TYPE =			"獎杯："
+STRINGS_TROPHY_STATUS =			"數據："
+STRINGS_TROPHY_HIDDEN =			"隱藏："
+STRINGS_TROPHY_UNLOCKED =		"已解鎖"
+STRINGS_TROPHY_LOCKED =			"鎖定"
+
+STRINGS_TROPHY_PLATINUM =		"鉑金"
+STRINGS_TROPHY_GOLD =			"黃金"
+STRINGS_TROPHY_SILVER =			"白銀"
+STRINGS_TROPHY_BRONZE =			"青銅"
+
+STRINGS_DELETE_QUESTION =		"你確定要消除這些獎杯嗎？"
+STRINGS_HIDDEN_YES =			"是"
+STRINGS_HIDDEN_NO =				"否"
+
+--color yellow
+STRINGS_TROPHY_WARNING_HIDDEN =	"隱藏"
+
+--Wifi is on
+STRINGS_TROPHY_OPENAPP =		"獎杯應用"
+STRINGS_TROPHY_WIFI_ON =		"記得關閉WI-FI,以防止上傳獎杯"
