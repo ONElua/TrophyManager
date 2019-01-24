@@ -27,37 +27,20 @@ else
 end
 
 -- Creamos carpeta de trabajo para los idiomas
-__PATH_LANG = "ux0:data/ONETROPHY/"
+__PATH_LANG = "ux0:data/ONETROPHY/lang/"
+__PATH_FONT = "ux0:data/ONETROPHY/font/"
 files.mkdir(__PATH_LANG)
+files.mkdir(__PATH_FONT)
 __LANG      = os.language()
-
-langs = {	
-	JAPANESE = 		"00",
-	ENGLISH_US = 	"01",
-	FRENCH = 		"02",
-	SPANISH = 		"03",
-	GERMAN = 		"04",
-	ITALIAN = 		"05",
-	DUTCH = 		"06",
-	PORTUGUESE = 	"07",
-	RUSSIAN = 		"08",
-	KOREAN = 		"09",
-	CHINESE_T = 	"10",
-	CHINESE_S = 	"11",
-	FINNISH = 		"12",
-	SWEDISH = 		"13",
-	DANISH = 		"14",
-	NORWEGIAN = 	"15",
-	POLISH = 		"16",
-	PORTUGUESE_BR = "17",
-	ENGLISH_GB = 	"18",
-	TURKISH = 		"19",
-}
 
 -- Loading language file
 dofile("lang/english_us.txt")
 if not files.exists(__PATH_LANG.."english_us.txt") then files.copy("lang/english_us.txt",__PATH_LANG) end
 if files.exists(__PATH_LANG..__LANG..".txt") then dofile(__PATH_LANG..__LANG..".txt") end
+
+-- Loading custom font
+fnt = font.load(__PATH_FONT.."font.ttf") or font.load(__PATH_FONT.."font.pgf") or font.load(__PATH_FONT.."font.pvf")
+if fnt then	font.setdefault(fnt) end
 
 --buttons asignation
 accept,cancel = "cross","circle"
@@ -78,3 +61,8 @@ DATA_TROPHY  = "ur0:user/00/trophy/data/"
 TROP_TROPHY  = "ur0:user/00/trophy/data/sce_trop"
 DB_TROPHY = "ur0:user/00/trophy/db"
 
+function draw.offsetgradrect(x,y,sx,sy,c1,c2,c3,c4,offset)
+	local sizey = sy/2
+		draw.gradrect(x,y,sx,sizey + offset,c1,c2,c3,c4)
+			draw.gradrect(x,y + sizey - offset,sx,sizey + offset,c3,c4,c1,c2)
+end

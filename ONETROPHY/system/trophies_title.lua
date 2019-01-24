@@ -81,12 +81,6 @@ function get_trophies()
 
 end
 
-function draw.offsetgradrect(x,y,sx,sy,c1,c2,c3,c4,offset)
-	local sizey = sy/2
-		draw.gradrect(x,y,sx,sizey + offset,c1,c2,c3,c4)
-			draw.gradrect(x,y + sizey - offset,sx,sizey + offset,c3,c4,c1,c2)
-end
-
 function trophies_title()
 
 	get_trophies()
