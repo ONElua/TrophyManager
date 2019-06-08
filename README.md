@@ -33,7 +33,7 @@
 ### NOTE: ###
 *This app Is based from Trophax app, but Trophy Manager does not unlock trophies.*
 
-![header](SCREENSHOOT2.png)
+![header](SCREENSHOOT3.png)
 
 ### Credits ###
 - Silica for his Trophax app
