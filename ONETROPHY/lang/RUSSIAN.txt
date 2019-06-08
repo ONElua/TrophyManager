@@ -1,0 +1,32 @@
+-----------------------------------------------Texts
+
+STRINGS_MARK_TROPHIES =			"Отметить/Снять трофеи"
+STRINGS_DEL_TROPHIES =			"Удалить трофеи"
+STRINGS_SHOW_DETAILS =			"Показать подробности"
+STRINGS_EMPTY =					"Нет трофеев !!!"
+
+STRINGS_RELOAD_TROPHIES =		"Необходимо сначало синхронизировать трофеи \n\nиз приложения Трофеи"
+STRINGS_GAME_NOT_INSTALLED =	"Игра не установлена !!!"
+STRINGS_SUB_TROPHIES =			"Доп-трофеи:"
+
+STRINGS_TROPHY_TYPE =			"Трофей:"
+STRINGS_TROPHY_STATUS =			"Статус:"
+STRINGS_TROPHY_HIDDEN =			"Скрытый:"
+STRINGS_TROPHY_UNLOCKED =		"Разблокирован"
+STRINGS_TROPHY_LOCKED =			"Заблокирован"
+
+STRINGS_TROPHY_PLATINUM =		"Платина"
+STRINGS_TROPHY_GOLD =			"Золото"
+STRINGS_TROPHY_SILVER =			"Серебро"
+STRINGS_TROPHY_BRONZE =			"Бронза"
+
+STRINGS_DELETE_QUESTION =		"Хочешь удалить эти трофеи?"
+STRINGS_HIDDEN_YES =			"Да"
+STRINGS_HIDDEN_NO =				"Нет"
+
+--color yellow
+STRINGS_TROPHY_WARNING_HIDDEN =	"СКРЫТЫЙ"
+
+--Wifi is on
+STRINGS_TROPHY_OPENAPP =		"Трофеи"
+STRINGS_TROPHY_WIFI_ON =		"Не забудь отключить Wi-Fi, чтобы не синхронизировать трофеи"
