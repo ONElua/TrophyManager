@@ -9,6 +9,12 @@
 ## IMPORTANT ##
 **Everytime a trophy Is deleted, the trophy app/bubble  must be launched to update the trophy db, we highly recomend you to disable the wifi in the PS Vita before launching the trophy app/bubble for this matter.**
 
+### Changelog 1.03 ###
+- Support for trophies in homebrews and ports.<br>
+
+### Changelog 1.02 ###
+- Support for custom font in ux0:data/ONETROPHY/font/font.pgf.<br>
+
 ### Changelog 1.01 ###
 - Now you can open the Trophies application.<br>
 
