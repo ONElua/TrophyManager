@@ -4,6 +4,7 @@ STRINGS_MARK_TROPHIES =			"Mark/Unmark Trophies"
 STRINGS_DEL_TROPHIES =			"Delete Trophies"
 STRINGS_SHOW_DETAILS =			"Show Details"
 STRINGS_EMPTY =					"Not Trophies !!!"
+STRINGS_SORT =                  "Sort: "
 
 STRINGS_RELOAD_TROPHIES =		"It is necessary to first synchronize the Trophies\n\nfrom the APP Trophies."
 STRINGS_GAME_NOT_INSTALLED =	"Game not installed !!!"
@@ -19,6 +20,14 @@ STRINGS_TROPHY_PLATINUM =		"Platinum"
 STRINGS_TROPHY_GOLD =			"Gold"
 STRINGS_TROPHY_SILVER =			"Silver"
 STRINGS_TROPHY_BRONZE =			"Bronze"
+
+--Sort
+STRING_SORT_ID =                "Trophy id"
+STRING_SORT_UNLOCKED =          "Unlocked"
+STRING_SORT_HIDDEN =            "Hidden"
+STRING_SORT_GROUP =             "Group"
+STRING_SORT_TITLE =             "Title"
+STRING_SORT_PROGRESS =          "Progress"
 
 STRINGS_DELETE_QUESTION =		"Do you want to eliminate this Trophies ?"
 STRINGS_HIDDEN_YES =			"Yes"

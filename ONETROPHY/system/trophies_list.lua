@@ -45,6 +45,7 @@ function get_trophiesL(obj)
 			else
 				tmp[i].view = true
 			end
+
 			tmp[i].pathicon = ICONS_TROPHY..obj.npcommid.."/TROP"..string.rep("0", 3 - string.len(tmp[i].trophyid))..tmp[i].trophyid..".PNG"
 			table.insert(trophyL,tmp[i])
 		end
@@ -173,6 +174,9 @@ function trophies_list(obj)
 					screen.print(40,450,STRINGS_SHOW_DETAILS,1,color.white,color.black,__ALEFT)
 				end
 
+				if buttonskey2 then buttonskey2:blitsprite(5,467,0) end
+				screen.print(40,470,STRINGS_SORT.._SORT_L[sort_L],1,color.white,color.black,__ALEFT)
+
 				y+=inter + 15
 
 			end --for
@@ -194,12 +198,12 @@ function trophies_list(obj)
 				if scroll:down() then d_scroll,t_scroll,init_scroll = 25,25,25 end
 			end
 
-			if buttons.square then
-				if trophyL[scroll.sel].unlocked == 0 then
-					if trophyL[scroll.sel].hidden == 1 then
+			if buttons.square and (trophyL[scroll.sel].unlocked == 0 and trophyL[scroll.sel].hidden == 1) then
+				--if trophyL[scroll.sel].unlocked == 0 then
+					--if trophyL[scroll.sel].hidden == 1 then
 						trophyL[scroll.sel].view = not trophyL[scroll.sel].view
-					end
-				end
+					--end
+				--end
 			end
 
 			if buttons.select then
@@ -215,10 +219,14 @@ function trophies_list(obj)
 				end
 			end
 
-			if buttons.select then
-				
+--[[
+			if buttons[accept] and obj.exist then
+				game.umount()
+					game.mount("ux0:/app/"..obj.ID)
+					os.message(tostring(trophy.init(obj.npcommid, obj.commsign, trophyL[scroll.sel].trophyid)))
+				game.umount()
 			end
-
+]]
 		end
 
 		if buttons.released[cancel] then

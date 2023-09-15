@@ -56,9 +56,9 @@ function get_trophies()
 								app = fp:read(0x9)
 							end
 							fp:close()
+							if app then trophyT[i].ID = app end
 						end
 
-						--[[
 						--Open TRPTRANS.DAT
 						trophyT[i].commsign = nil
 						local fp = io.open(DATA_TROPHY..trophyT[i].npcommid.."/TRPTRANS.DAT","r")
@@ -67,7 +67,6 @@ function get_trophies()
 							trophyT[i].commsign = fp:read(0xA0)
 							fp:close()
 						end
-						]]
 
 						if app and game.exists(app) then trophyT[i].exist = true end
 
@@ -129,13 +128,13 @@ function trophies_title()
 					screen.print(955, 65, trophyT[scroll.sel].total,1,color.white,color.black, __ARIGHT)
 
 					if not trophyT[scroll.sel].exist then
-						screen.print(950,460,STRINGS_GAME_NOT_INSTALLED,1.5,color.red:a(150),color.black, __ARIGHT)
+						screen.print(950,460,trophyT[scroll.sel].ID.." "..STRINGS_GAME_NOT_INSTALLED,1.5,color.red:a(150),color.black, __ARIGHT)
 					end
 
-					if screen.textwidth( trophyT[scroll.sel].details,1) > 945 then
-						d_scroll = screen.print(d_scroll,510,trophyT[scroll.sel].details,1,color.white,color.black, __SLEFT,920)
+					if screen.textwidth(trophyT[scroll.sel].details,1) > 945 then
+						d_scroll = screen.print(d_scroll,520,trophyT[scroll.sel].details,1,color.white,color.black, __SLEFT,920)
 					else 
-						screen.print(480,510,trophyT[scroll.sel].details,1,color.white,color.black, __ACENTER)
+						screen.print(480,520,trophyT[scroll.sel].details,1,color.white,color.black, __ACENTER)
 					end
 
 				end
@@ -192,8 +191,11 @@ function trophies_title()
 				if buttonskey then buttonskey:blitsprite(10,437,2) end                     		--[]
 				screen.print(40,440,STRINGS_MARK_TROPHIES,1,color.white,color.black,__ALEFT)
 
-				if buttonskey then buttonskey2:blitsprite(5,460,1) end                   		--Start
+				if buttonskey2 then buttonskey2:blitsprite(5,460,1) end                   		--Start
 				screen.print(40,462,STRINGS_DEL_TROPHIES,1,color.white,color.black, __ALEFT)
+
+				if buttonskey2 then buttonskey2:blitsprite(5,483,0) end                     	--select
+				screen.print(40,485,STRINGS_SORT.._SORT_T[sort_T],1,color.white,color.black,__ALEFT)
 
 				y+=inter + 15
 
@@ -210,8 +212,8 @@ function trophies_title()
 
 		end
 
-		if buttonskey then buttonskey:blitsprite(10,483,1) end                     		--Triangle
-		screen.print(40,485,STRINGS_TROPHY_OPENAPP,1,color.white,color.black,__ALEFT)
+		if buttonskey then buttonskey:blitsprite(940,483,1) end                     		--Triangle
+		screen.print(935,485,STRINGS_TROPHY_OPENAPP,1,color.white,color.black,__ARIGHT)
 
 		screen.flip()
 

@@ -4,6 +4,7 @@ STRINGS_MARK_TROPHIES =			"标记/取消标记 奖杯"
 STRINGS_DEL_TROPHIES =			"删除奖杯"
 STRINGS_SHOW_DETAILS =			"显示详情"
 STRINGS_EMPTY =					"没有奖杯！！！"
+STRINGS_SORT =                  "Sort: "
 
 STRINGS_RELOAD_TROPHIES =		"需要先与奖杯气泡同步\n\n（非联网上传）"
 STRINGS_GAME_NOT_INSTALLED =	"游戏还没安装！！！"
@@ -19,6 +20,14 @@ STRINGS_TROPHY_PLATINUM =		"铂金"
 STRINGS_TROPHY_GOLD =			"黄金"
 STRINGS_TROPHY_SILVER =			"白银"
 STRINGS_TROPHY_BRONZE =			"青铜"
+
+--Sort
+STRING_SORT_ID =                "Trophy id"
+STRING_SORT_UNLOCKED =          "Unlocked"
+STRING_SORT_HIDDEN =            "Hidden"
+STRING_SORT_GROUP =             "Group"
+STRING_SORT_TITLE =             "Title"
+STRING_SORT_PROGRESS =          "Progress"
 
 STRINGS_DELETE_QUESTION =		"你确定要消除这些奖杯吗？"
 STRINGS_HIDDEN_YES =			"是"

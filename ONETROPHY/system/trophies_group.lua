@@ -150,6 +150,9 @@ function trophies_group(obj)
 					trophyG[i].icon0:blit(955 - (trophyG[i].icon0:getw()/2), y + (inter/2))
 				end
 
+				if buttonskey2 then buttonskey2:blitsprite(5,467,0) end
+				screen.print(40,470,STRINGS_SORT.._SORT_G[sort_G],1,color.white,color.black,__ALEFT)
+
 				y+=inter + 15
 
 			end --for

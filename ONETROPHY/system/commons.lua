@@ -54,6 +54,11 @@ img_trophies = image.load("resources/trophies.png",60,60)
 buttonskey = image.load("resources/buttons.png",20,20)
 buttonskey2 = image.load("resources/buttons2.png",30,20)
 
+--sorts
+_SORT_L = { STRING_SORT_ID, STRING_SORT_UNLOCKED, STRING_SORT_HIDDEN }
+_SORT_G = { STRING_SORT_GROUP, STRING_SORT_PROGRESS }
+_SORT_T = { STRING_SORT_TITLE, STRING_SORT_PROGRESS }
+
 --Constants
 ICONS_TROPHY = "ux0:user/00/trophy/conf/"
 CONF_TROPHY  = "ur0:user/00/trophy/conf/"
